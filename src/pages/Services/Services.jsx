@@ -7,7 +7,7 @@ import brandImageTwo from '../../assets/brands/CAM.png'
 import brandImageThree from '../../assets/brands/CAE.png'
 import rocketIcon from '../../assets/rocketIcon.png';
 import DiscoverIcon from '../../assets/discoverIcon.png';
-import ContainerIcon from '../../assets/ContainerIcon.png';
+import ContainerIcon from '../../assets/containerIcon.png';
 import ContainerOutlineIcon from '../../assets/ContainerOutlineIcon.png';
 import ArrowClickIcon from '../../assets/ArrowClickIcon.png';
 import SendIcon from '../../assets/SendIcon.png';

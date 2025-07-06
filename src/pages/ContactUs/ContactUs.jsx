@@ -1,5 +1,5 @@
 import styles from './ContactUs.module.scss'
-import HeroImage from '../../assets/contactImage.png'
+import HeroImage from '../../assets/ContactImage.png'
 const ContactUs = () => {
     return (
         <div className={styles.contactUs}>
