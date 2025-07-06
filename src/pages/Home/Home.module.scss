@@ -1,0 +1,281 @@
+.home {
+    padding: 10px;
+
+    .heroContainer {
+        min-height: 100vh;
+        border-radius: 24px;
+        padding: 100px 20px 20px 20px;
+        background: var(--light-gray-color);
+
+        .heroTitle {
+            font-size: 60px;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+
+    .imageContainer {
+        position: relative; // required if the parent is going to hold the absolute children
+        width: 100%;
+        height: 60vh; // or any specific height you want
+
+    }
+
+    .imageContainer::before {
+        content: '';
+        display: block;
+        padding-top: 100%; // optional, if you want to keep aspect ratio
+    }
+
+    .imageContainer>* {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .heroImage {
+        height: 85vh;
+        width: auto;
+    }
+
+    .imageTextOne {
+        font-size: 340px;
+    }
+
+    .imageTextTwo {
+        font-size: 340px; // match `.imageTextOne` size if needed
+        color: transparent; // make fill transparent
+        -webkit-text-stroke: 2px var(--white-color); // outline size and color
+        /* text-stroke removed as it is not a valid CSS property */
+    }
+
+    .herobutton {
+        padding: 6px 8px 6px 20px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        border-radius: 40px;
+        background: var(--white-color);
+        border: none;
+        font-weight: 400;
+        font-size: 20px;
+
+        .icon {
+            color: var(--primary-color);
+        }
+    }
+
+    .aboutTitle {
+        font-size: 20px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .aboutDesc {
+        font-weight: 500;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .aboutCard {
+        background: var(--light-gray-color);
+        border-radius: 12px;
+        padding: 32px;
+        display: flex;
+        justify-content: space-between;
+        min-height: 350px;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+
+        .aboutCardTitle {
+            font-weight: 400px;
+            font-size: 50px;
+            color: var(--primary-color);
+        }
+
+        .aboutCardDesc {
+            font-weight: 400px;
+            font-size: 14px;
+            margin: 0;
+        }
+    }
+
+    .brandTitle {
+        font-size: 20px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .brandSubTitle {
+        font-weight: 500;
+        font-size: 72px;
+    }
+
+    .brandDesc {
+        font-size: 16px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .brandCard {
+        padding: 25px 24px;
+        border-radius: 24px;
+        border: 3px solid var(--primary-color);
+        box-shadow: 0px 0px 12px 4px #00000033 inset;
+        min-height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        gap:30px;
+
+        .brandImage {
+            width: 80%;
+            height: auto;
+        }
+
+        .brandCardTitle {
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .brandCardDesc {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+}
+
+@media (max-width:1100px) {
+    .home {
+        .imageTextOne {
+            font-size: 200px;
+        }
+
+        .imageTextTwo {
+            font-size: 200px;
+        }
+
+        .aboutCard {
+            .aboutCardTitle {
+                font-size: 32px;
+            }
+        }
+
+    }
+}
+
+
+@media (max-width:700px) {
+    .home {
+        .heroContainer {
+            .heroTitle {
+                font-size: 40px;
+            }
+        }
+
+        .imageContainer {
+            height: 30vh;
+        }
+
+        .heroImage {
+            height: 50vh;
+            width: auto;
+        }
+
+        .imageTextOne {
+            font-size: 100px;
+        }
+
+        .imageTextTwo {
+            font-size: 100px;
+        }
+
+        .aboutDesc {
+            font-size: 24px;
+        }
+
+        .aboutCard {
+            .aboutCardTitle {
+                font-size: 32px;
+            }
+        }
+
+        .brandSubTitle {
+            font-size: 32px;
+        }
+
+        
+       
+
+    }
+
+    .profileCard {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+
+}
+
+.profileCard {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.initialCircle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--primary-color); /* You can change the color */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto 15px auto;
+}
+
+.profileName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profileRole {
+  font-size: 1rem;
+  color: #555;
+}

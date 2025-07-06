@@ -1,0 +1,109 @@
+.contactUs{
+    padding: 10px;
+
+    .heroContainer{
+        position: relative;
+        min-height: 100vh;
+        border-radius: 24px;
+
+        .HeroImage{
+            position: absolute;
+            border-radius: 20px;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover; // Ensures the image covers the container
+            display: block; // Ensures the image is displayed as a block element
+        }
+
+        .heroText{
+            position: absolute;
+            padding: 10px 20px;
+            left: 0px;
+            bottom: 0px;
+            text-align: center;
+            color: var(--white-color);
+            font-size: 60px;
+            font-weight: 500;
+        }
+    }
+
+    .contactFormContainer{
+        background: var(--primary-color);
+        padding: 20px;
+        border-radius: 24px;
+
+        .formWrapper{
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 16px;
+
+            .formTitle{
+                font-size: 100px;
+                font-weight: 500;
+                color: var(--white-color);
+
+                @media (max-width: 700px) {
+                    font-size: 60px;
+                    
+                }
+            }
+
+            .formDesc{
+                font-size: 20px;
+                font-weight: 400;
+                color: var(--white-color);
+                margin-bottom: 20px;
+            }
+
+            .line{
+                border-bottom: 2px solid #D72638;
+            }
+
+            .contactTitle{
+                font-size: 48px;
+                font-weight: 500;
+                color: var(--white-color);
+                margin-bottom: 10px;
+            }
+
+            .contactInfo{
+                font-size: 20px;
+                font-weight: 400;
+                color: var(--white-color);
+                margin-bottom: 20px;
+
+                .contactLink{
+                    color: var(--white-color);
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #D72638; // Change to your desired hover color
+                    }
+                }
+            }
+
+            .contactForm{
+                background: var(--white-color);
+                padding: 20px;
+                border-radius: 16px;
+
+                .contactFormTitle{
+                    font-size: 36px;
+                    font-weight: 500;
+                    color: var(--black-color);
+                    
+                }
+
+                .contactFormDesc{
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: var(--black-color);
+                    margin-bottom: 20px;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,199 @@
+.services {
+    padding: 10px;
+
+    .subTitle {
+        font-weight: 500;
+        font-size: 72px;
+    }
+
+    .heroContainer {
+        min-height: 100vh;
+        border-radius: 24px;
+        padding: 75px 20px 20px 20px;
+        background: var(--light-gray-color);
+
+
+        .ServiceTitle {
+            font-weight: 500;
+            font-size: 102px;
+
+            @media screen and (max-width: 1200px) {
+                font-size: 72px;
+
+            }
+
+            @media (max-width: 768px) {
+                font-size: 48px;
+
+            }
+        }
+
+        .herobutton {
+            padding: 6px 8px 6px 20px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            border-radius: 40px;
+            background: var(--white-color);
+            border: none;
+            font-weight: 400;
+            font-size: 20px;
+
+            .icon {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+
+    .brandTitle {
+        font-size: 20px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+
+
+    .brandDesc {
+        font-size: 16px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .brandCard {
+        padding: 25px 24px;
+        border-radius: 24px;
+        border: 3px solid var(--primary-color);
+        box-shadow: 0px 0px 12px 4px #00000033 inset;
+        min-height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        gap: 30px;
+
+        .brandImage {
+            height: 85vh;
+            width: auto;
+            max-width: 100%;
+            object-fit: cover;
+
+            @media (max-width: 768px) {
+                height: 60vh;
+
+            }
+        }
+
+        .brandCardTitle {
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .brandCardDesc {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    .verticalLine {
+        width: 3px;
+        /* This will control the thickness */
+        height: 100%;
+        margin: 40px auto;
+
+        /* Center the line */
+        border-left: 2px solid var(--primary-color)
+    }
+
+    .stepContainer {
+        background: var(--light-gray-color);
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items:end ;
+        margin-top: 20px;
+
+        .stepIcon{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--white-color);
+                font-size: 24px;
+            }
+
+
+        .stepContent {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            width: 100%;
+
+            
+            .stepTitle {
+                font-size: 24px;
+                font-weight: 400;
+            }
+
+            .stepDesc {
+                font-size: 16px;
+                font-weight: 400;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+            }
+        }
+    }
+
+    .deliverableCard{
+        border-radius: 12px;
+        padding: 20px;
+        background: var(--light-gray-color);
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 20px;
+
+        .deliverableTitle{
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .deliverableSubtitle{
+            font-size: 48px;
+            font-weight: 500;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .deliverableDesc{
+            font-size: 16px;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .deliverableItem {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .deliverableIcon {
+                    color: var(--primary-color);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
