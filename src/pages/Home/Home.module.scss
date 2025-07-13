@@ -137,11 +137,15 @@
         flex-direction: column;
         justify-content: space-between;
         margin-bottom: 10px;
-        gap:30px;
+        margin: 0 30px;
+        gap: 30px;
 
         .brandImage {
-            width: 80%;
-            height: auto;
+            height: 60vh;
+            width: auto;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 20px;
         }
 
         .brandCardTitle {
@@ -218,64 +222,63 @@
             font-size: 32px;
         }
 
-        
-       
-
     }
 
     .profileCard {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  text-align: center;
-  background-color: #f9f9f9;
-  transition: transform 0.3s ease;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        text-align: center;
+        background-color: #f9f9f9;
+        transition: transform 0.3s ease;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-}
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+    }
 
 
 
 }
 
 .profileCard {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  text-align: center;
-  background-color: #f9f9f9;
-  transition: transform 0.3s ease;
+    padding: 15px 20px;
+    // border: 1px solid #ddd;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .initialCircle {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background-color: var(--primary-color); /* You can change the color */
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0 auto 15px auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    /* You can change the color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 auto 15px auto;
 }
 
 .profileName {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .profileRole {
-  font-size: 1rem;
-  color: #555;
+    font-size: 1rem;
+    color: #555;
 }
