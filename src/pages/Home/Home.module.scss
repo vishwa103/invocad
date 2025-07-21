@@ -78,17 +78,17 @@
 
     .aboutDesc {
         font-weight: 500;
-        font-size: 32px;
+        font-size: 22px;
         text-align: center;
     }
 
     .aboutCard {
-        background: var(--light-gray-color);
+        background: var(--white-color);
         border-radius: 12px;
         padding: 32px;
         display: flex;
         justify-content: space-between;
-        min-height: 350px;
+        min-height: 250px;
         flex-direction: column;
         gap: 10px;
         margin-bottom: 10px;
@@ -209,7 +209,7 @@
         }
 
         .aboutDesc {
-            font-size: 24px;
+            font-size: 18px;
         }
 
         .aboutCard {

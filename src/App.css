@@ -10,10 +10,12 @@
   --black-color: #222222;
   --white-color: #ffffff;
   --light-gray-color: #da942a;
+  --gray-color: #f5f5f5;
   
 }
 
 .mainContainer{
+  background: var(--gray-color);
   min-height: 100vh;
   overflow-x: hidden;
 }

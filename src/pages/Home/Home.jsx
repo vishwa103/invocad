@@ -9,11 +9,10 @@ import brandImageTwo from '../../assets/brands/CAM.png'
 import brandImageThree from '../../assets/brands/CAE.png'
 import ServiceSection from '../../components/ServiceSection/ServiceSection'
 import { useLocation } from 'react-router-dom'
-
+import Faq from '../../components/FAQ/FAQ'
 
 const Home = () => {
   const location = useLocation();
-
 
   useEffect(() => {
     if (location.hash) {
@@ -47,14 +46,32 @@ const Home = () => {
       </div>
 
       <section className="my-5 py-5" id='about'>
-        <p className={styles.aboutTitle}>
+        <p className={`${styles.aboutTitle} mt-5`}>
           <img src={starsIcon} alt="stars" /> Who We Are
         </p>
+        <p className='text-center'>We’re building more than designs we’re building tomorrow.</p><br />
         <p className={styles.aboutDesc}>
-          Invocad isn’t just a design studio — it’s where bold ideas meet precision engineering. From the first sketch to the final blueprint, we craft seamless, production-ready solutions that don’t just work — they wow. Fusing artistry with advanced tech, we shape products that look stunning and perform flawlessly
+          At Invocad, we bring ideas to life through intelligent design, engineering precision, and a deep understanding of manufacturing needs. We are a design led firm specializing in Product Design, Manufacturing Design, Reverse Engineering, AutoCAD Nesting, 2D to 3D Migration, CAM, Simulation, and more.
         </p>
-
-
+        <p className={styles.aboutDesc}>
+          With a team skilled in industry standard tools like SolidWorks, CATIA, Creo, and AutoCAD, we deliver solutions that are both innovative and practical ready for real world manufacturing.
+        </p>
+        <p className={styles.aboutDesc}>
+          From the initial concept to the final prototype, we follow a step-by-step structured approach to ensure clarity, accuracy, and performance. Whether you're a startup looking to bring your product to market or an industry leader streamlining your design process, Invocad is your trusted engineering partner.
+        </p>
+        <div className='d-flex  flex-column mt-5'>
+          <div className={`${styles.aboutCard} bg-white`}>
+            <h3 className={`${styles.aboutCardTitle} `} >Our Mission</h3>
+            <p className=''>At Invocad, we exist to transform raw ideas into real world products through intelligent design and precision engineering. Our mission is to bridge imagination and industry crafting every line, curve, and component with purpose. With deep expertise in CAD tools and manufacturing design, we partner with visionaries to bring innovation to life faster, smarter, and with unmatched clarity.</p>
+          </div>
+          <div className={`${styles.aboutCard} bg-white`}>
+            <h3 className={styles.aboutCardTitle}>Our Vission</h3>
+            <p className=''>To be a driving force in the future of product design where creativity meets engineering, and every idea finds its form.
+              <br />At Invocad, we envision a world where design is not a service, but a catalyst for innovation, impact, and growth.
+              <br />We aim to become a trusted partner for inventors, startups, and industries known not just for our precision, but for the passion we pour into every project.
+            </p>
+          </div>
+        </div>
       </section>
 
 
@@ -90,9 +107,9 @@ const Home = () => {
       </div>
 
       <div className='my-5 py-5'>
-        <p className={styles.brandTitle}><img src={rocketIcon} />Why Brands Choose Us</p>
+        <p className={styles.brandTitle}><img src={rocketIcon} />Why Choose Us</p>
         <div className='row'>
-          <h3 className={`col-md-8 ${styles.brandSubTitle}`}>What Sets Our Design Solutions Apart</h3>
+          <h3 className={`col-md-8 ${styles.brandSubTitle}`}>Where INVOCAD add's value</h3>
           <p className={`col-md-4 ${styles.brandDesc}`}>With a commitment to innovation, accuracy, and seamless collaboration, we turn your vision into production-ready reality.</p>
         </div>
 
@@ -155,8 +172,9 @@ const Home = () => {
         </div>
       </div>
 
-      <ServiceSection />
+      {/* <ServiceSection /> */}
 
+      <Faq />
       {/* Team Profiles */}
       <div className="row mt-5">
         {/* GOKUL */}
