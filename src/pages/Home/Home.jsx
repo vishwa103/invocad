@@ -189,29 +189,29 @@ const Home = () => {
               </div>
             </div>
             <div className='row w-100'>
-  <div className='col-md-6 mb-2'>
-    <Link
-      to="/contact"
-      className="text-decoration-none"
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-    >
-      <button className={styles.contactBannerButtonOne}>
-        Talk to Our Team
-      </button>
-    </Link>
-  </div>
-  <div className='col-md-6 mb-2'>
-    <Link
-      to="/contact"
-      className="text-decoration-none"
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-    >
-      <button className={styles.contactBannerButtonTwo}>
-        Get a Project Estimate
-      </button>
-    </Link>
-  </div>
-</div>
+              <div className='col-md-6 mb-2'>
+                <Link
+                  to="/contact"
+                  className="text-decoration-none"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  <button className={styles.contactBannerButtonOne}>
+                    Talk to Our Team
+                  </button>
+                </Link>
+              </div>
+              <div className='col-md-6 mb-2'>
+                <Link
+                  to="/contact"
+                  className="text-decoration-none"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  <button className={styles.contactBannerButtonTwo}>
+                    Get a Project Estimate
+                  </button>
+                </Link>
+              </div>
+            </div>
 
           </div>
         </div>
