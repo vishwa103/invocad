@@ -115,7 +115,7 @@ const Home = () => {
 
         <div className='my-5'>
           <div className='row'>
-            <div className='col-md-6 col-lg-4'>
+            <div className='col-md-6 col-lg-4  mb-2'>
               <div className={styles.brandCard}>
 
                 <div className='d-flex align-items-center justify-content-center'>
@@ -133,7 +133,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className='col-md-6 col-lg-4'>
+            <div className='col-md-6 col-lg-4 mb-2'>
               <div className={styles.brandCard}>
 
                 <div className='d-flex align-items-center justify-content-center'>
@@ -150,8 +150,8 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-            <div className='col-md-6 col-lg-4'>
+ 
+            <div className='col-md-6 col-lg-4  mb-2'>
               <div className={styles.brandCard}>
                 <div className='d-flex align-items-center justify-content-center'>
                   <img src={brandImageThree} className={styles.brandImage} />
