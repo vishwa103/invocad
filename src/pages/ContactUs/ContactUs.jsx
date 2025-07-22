@@ -1,6 +1,35 @@
-import styles from './ContactUs.module.scss'
-import HeroImage from '../../assets/ContactImage.png'
+import React, { useRef, useState } from 'react';
+import styles from './ContactUs.module.scss';
+import HeroImage from '../../assets/ContactImage.png';
+import emailjs from '@emailjs/browser';
+
 const ContactUs = () => {
+    const formRef = useRef();
+    const [successMsg, setSuccessMsg] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            'YOUR_SERVICE_ID',
+            'YOUR_TEMPLATE_ID',
+            formRef.current,
+            'YOUR_PUBLIC_KEY'
+        ).then(
+            (result) => {
+                setSuccessMsg('✅ Message sent successfully!');
+                setErrorMsg('');
+                formRef.current.reset();
+            },
+            (error) => {
+                setErrorMsg('❌ Failed to send message. Please try again later.');
+                setSuccessMsg('');
+                console.error(error.text);
+            }
+        );
+    };
+
     return (
         <div className={styles.contactUs}>
             <div className={styles.heroContainer}>
@@ -9,6 +38,7 @@ const ContactUs = () => {
                     Let’s Build the Future Together
                 </h2>
             </div>
+
             <div className='my-5 py-5'>
                 <div className={styles.contactFormContainer}>
                     <div className={styles.formWrapper}>
@@ -17,7 +47,9 @@ const ContactUs = () => {
                                 <h3 className={styles.formTitle}>Contact Us</h3>
                             </div>
                             <div className='col-md-6'>
-                                <p className={styles.formDesc}>Our team is ready to assist you with your design and engineering needs. Fill out the form or connect with us directly — let’s bring your ideas to life with precision and innovation.</p>
+                                <p className={styles.formDesc}>
+                                    Our team is ready to assist you with your design and engineering needs. Fill out the form or connect with us directly — let’s bring your ideas to life with precision and innovation.
+                                </p>
                             </div>
                         </div>
 
@@ -33,36 +65,48 @@ const ContactUs = () => {
                                 </div>
                             </div>
                             <div className='col-md-4'>
-                                 <div className='py-5'>
+                                <div className='py-5'>
                                     <h3 className={styles.contactTitle}>Mobile</h3>
-                                    <p className={styles.contactInfo}>
-                                    +91 6369727885
-                                    </p>
+                                    <p className={styles.contactInfo}>+91 6369727885</p>
                                 </div>
                             </div>
-                            <div className='col-md-4'>
-                                {/* <div className='py-5'>
-                                    <h3 className={styles.contactTitle}>Address</h3>
-                                    <p className={styles.contactInfo}>
-                                        1234 Design Street, 
-                                        Innovation City,
-                                        Country, 123456
-                                    </p>
-                                </div> */}
-                            </div>
-
                         </div>
 
-                        {/* <form className={styles.contactForm}>
+                        <form ref={formRef} onSubmit={handleSubmit} className={styles.contactForm}>
                             <h3 className={styles.contactFormTitle}>Book a Free Consultation</h3>
                             <p className={styles.contactFormDesc}>// Reach out today and take the first step towards a unforgettable experience.</p>
-                            </form> */}
+
+                            <div className='row'>
+                                <div className='col-md-6'>
+                                    <input type="text" name="user_name" placeholder='Name' className={styles.inputField} required />
+                                </div>
+                                <div className='col-md-6'>
+                                    <input type="email" name="user_email" placeholder='Email' className={styles.inputField} required />
+                                </div>
+                                <div className='col-md-6'>
+                                    <input type="text" name="user_phone" placeholder='Phone Number' className={styles.inputField} />
+                                </div>
+                                <div className='col-md-6'>
+                                    <input type="text" name="company" placeholder='Company Name' className={styles.inputField} />
+                                </div>
+                                <div className='col-md-12'>
+                                    <textarea name="message" placeholder='How can we help you?' className={styles.inputField} rows="4" required></textarea>
+                                </div>
+                                <div className='col-md-12'>
+                                    <button type="submit" className={styles.submitButton}>Send Message</button>
+                                </div>
+                                <div className='col-md-12 mt-3'>
+                                    {successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
+                                    {errorMsg && <p style={{ color: 'red' }}>{errorMsg}</p>}
+                                </div>
+                            </div>
+                        </form>
 
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ContactUs
+export default ContactUs;
