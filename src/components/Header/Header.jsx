@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import logo from '../../assets/logo/invoCAD LOGO.png';
 import { Link, NavLink, useLocation } from 'react-router-dom';
@@ -17,7 +17,7 @@ const Header = () => {
     const location = useLocation();
     const [isAboutVisible, setIsAboutVisible] = useState(false);
 
-    // Intersection Observer for About section
+    // Intersection Observer for #about section
     useEffect(() => {
         const aboutSection = document.getElementById('about');
         if (!aboutSection) return;
@@ -28,7 +28,7 @@ const Header = () => {
             },
             {
                 root: null,
-                threshold: 0.5, // 50% of the section must be visible
+                threshold: 0.5,
             }
         );
 
@@ -59,6 +59,12 @@ const Header = () => {
                                 {index !== 0 && <div className={styles.borderLine} />}
                                 <NavLink
                                     to={item.link}
+                                    onClick={() => {
+                                        // Scroll to top only if it's not a hash link
+                                        if (!isHashLink) {
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        }
+                                    }}
                                     className={() =>
                                         `${styles.navItem} ${isActiveLink() ? styles.active : ''}`
                                     }

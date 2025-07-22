@@ -8,9 +8,9 @@ import brandImageOne from '../../assets/brands/CAD.png'
 import brandImageTwo from '../../assets/brands/CAM.png'
 import brandImageThree from '../../assets/brands/CAE.png'
 import ServiceSection from '../../components/ServiceSection/ServiceSection'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Faq from '../../components/Faq/Faq'
-
+import bannerImage from '../../assets/bannerImage.jpg'
 const Home = () => {
   const location = useLocation();
 
@@ -171,44 +171,54 @@ const Home = () => {
 
         </div>
       </div>
+      <div className="row mt-5">
+        <div className={styles.contactBanner}>
+          <img src={bannerImage} alt="Contact Us Hero" width="100%" className={styles.contactBannerImage} />
 
-      {/* <ServiceSection /> */}
+          <div className={styles.contactBannerContent}>
+            <div className='row'>
+              <div className='col-md-7'>
+                <h2 className={styles.contactBannerTitle}>
+                  Let’s Turn Your Vision into Reality
+                </h2>
+              </div>
+              <div className='col-md-5 d-flex align-items-center justify-content-center'>
+                <p className={styles.contactBannerDesc}>
+                  Our team is ready to dive into your project and make your ideas come to life. Contact us for a consultation.
+                </p>
+              </div>
+            </div>
+            <div className='row w-100'>
+  <div className='col-md-6 mb-2'>
+    <Link
+      to="/contact"
+      className="text-decoration-none"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    >
+      <button className={styles.contactBannerButtonOne}>
+        Talk to Our Team
+      </button>
+    </Link>
+  </div>
+  <div className='col-md-6 mb-2'>
+    <Link
+      to="/contact"
+      className="text-decoration-none"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    >
+      <button className={styles.contactBannerButtonTwo}>
+        Get a Project Estimate
+      </button>
+    </Link>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
 
       <Faq />
-      {/* Team Profiles */}
-      <div className="row mt-5">
-        {/* GOKUL */}
-        {/* <div className="col-md-4 mb-4">
-          <div className={styles.profileCard}>
-            <div className={styles.initialCircle}>G</div>
-            <div>
-            <h3 className={styles.profileName}>GOKUL</h3>
-            <p className={styles.profileRole}>FOUNDER & DESIGN ENGINEER</p>
-            </div>
-          </div>
-        </div> */}
 
-        {/* ARUN */}
-        {/* <div className="col-md-4 mb-4">
-      <div className={styles.profileCard}>
-        <div className={styles.initialCircle}>A</div>
-        <h3 className={styles.profileName}>ARUN</h3>
-        <p className={styles.profileRole}>CO-FOUNDER and DESIGN ENGINEER</p>
-      </div>
-    </div> */}
-
-        {/* MARIMUTHU */}
-        {/* <div className="col-md-4 mb-4">
-          <div className={styles.profileCard}>
-            <div className={styles.initialCircle}>M</div>
-            <div>
-            <h3 className={styles.profileName}>MARIMUTHU</h3>
-            <p className={styles.profileRole}>CO-FOUNDER & DESIGN ENGINEER</p>
-            </div>
-
-          </div>
-        </div> */}
-      </div>
 
     </div>
   )
