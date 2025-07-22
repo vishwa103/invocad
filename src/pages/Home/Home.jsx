@@ -9,7 +9,7 @@ import brandImageTwo from '../../assets/brands/CAM.png'
 import brandImageThree from '../../assets/brands/CAE.png'
 import ServiceSection from '../../components/ServiceSection/ServiceSection'
 import { useLocation } from 'react-router-dom'
-import Faq from '../../components/FAQ/FAQ'
+import Faq from '../../components/Faq/Faq'
 
 const Home = () => {
   const location = useLocation();
