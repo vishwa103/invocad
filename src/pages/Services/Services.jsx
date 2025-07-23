@@ -17,28 +17,58 @@ const Services = () => {
 
     const stepsData = [
         {
-            title: "Discovery & Research",
-            description: "Understanding user needs, market trends, and technical requirements.",
+            title: "Requirement Understanding",
+            description:
+                `We begin by learning about your idea, problem, or product goal. Whether you are starting from scratch, updating an old design, or just need technical help, we listen carefully.`,
             icon: DiscoverIcon
         },
         {
-            title: "Concept Development",
-            description: "Generating multiple design concepts with sketches, moodboards, and rough models.",
+            title: "Research and Concept Ideation",
+            description: `We explore possibilities through sketches, references, and initial 3D concepts to shape your vision into a clear direction.
+    (You can approach us even if you only need help with early design or ideation.)` ,
             icon: ContainerIcon
         },
         {
-            title: "Detailed 3D Modeling",
-            description: "Developing high-fidelity CAD models using SolidWorks, CATIA, or Creo.",
+            title: "3D Design and CAD Modeling",
+            description: `Our engineers build precise 3D models using SolidWorks, CATIA, Creo, or AutoCAD. The models are tailored for product function, fit, and form.
+
+(We also handle 2D to 3D migration, legacy design conversion, and modeling only projects.)
+`,
             icon: ContainerOutlineIcon
         },
         {
-            title: "Prototyping & Testing",
-            description: "Creating physical or digital prototypes for real-world testing and validation.",
+            title: "Simulation and Validation (CAE)",
+            description: `If needed, we run simulations like stress analysis, motion studies, or thermal testing to validate and optimize your design.
+
+(You can choose Invocad just for simulation and performance analysis.)
+`,
             icon: ArrowClickIcon
         },
         {
-            title: "Final Design Optimization",
-            description: "Fine-tuning for manufacturability, functionality, and aesthetics before handover.",
+            title: "Design for Manufacturing (DFM)",
+            description: `We refine the design to ensure it is production ready. This includes optimization for materials, tolerances, machining feasibility, and cost efficiency.
+
+(Perfect for clients who already have a model and need help getting it ready for manufacturing.)
+`,
+            icon: SendIcon
+        },
+        {
+            title: "Technical Documentation",
+            description: `We create detailed 2D drawings, exploded views, bills of materials, and assembly instructions for vendors and production teams.`,
+            icon: SendIcon
+        },
+        {
+            title: "Manufacturing Support",
+            description: `From file preparation and nesting to working with machinists, we assist during the production phase to ensure accuracy and efficiency.
+
+(Even if your design is already done, we can help with just manufacturing support.)
+`,
+            icon: SendIcon
+        },
+        {
+            title: "Delivery and Post Project Support",
+            description: `We hand over all source files, drawings, and simulation reports. We also remain available for revisions, file conversions, or additional updates.
+            `,
             icon: SendIcon
         }
     ];
@@ -63,30 +93,29 @@ const Services = () => {
 
     const deliverablesData = [
         {
-            title: "3D CAD Models",
-            description: "Highly detailed, production-ready 3D files."
+            title: "CAD",
+            description: `3D CAD Models
+<br/>Concept Sketches
+<br/>Engineering Drawings
+<br/>2D to 3D Conversion
+<br/>Reverse Engineering
+`
         },
         {
-            title: "Concept Sketches",
-            description: "Creative visualization of early ideas and directions."
-        },
+            title: "CAM",
+            description: `Design for Manufacturing
+<br/>CNC Ready Drawings and Nesting
+<br/>Tolerance Optimization
+<br/>Prototyping Guidance
+`},
         {
-            title: "Engineering Drawings",
-            description: "Complete manufacturing drawings with dimensions and tolerances."
-        },
-        {
-            title: "Prototypes",
-            description: "Physical or digital prototypes for design validation."
-        },
-        {
-            title: "Design Specifications",
-            description: "Comprehensive documentation for production and marketing."
-        },
-        {
-            title: "And A Lot More...",
-            description: "",
-            isSubtitle: true
-        }
+            title: "CAE",
+            description: `FEA
+<br/>Motion Simulation
+<br/>Thermal Analysis
+<br/>Design Optimization
+`        },
+
     ];
 
     return (
@@ -109,15 +138,15 @@ const Services = () => {
                         Explore how Invocad transforms ideas into exceptional products <br />
                         through world-class engineering and design expertise.
                     </p>
-                    <button className={styles.herobutton}>
+                    {/* <button className={styles.herobutton}>
                         Learn more <FaArrowCircleRight className={styles.icon} size={40} />
-                    </button>
+                    </button> */}
                 </div>
             </div>
 
             {/* Why Choose Invocad */}
             <div className='my-5 py-5'>
-                <p className={styles.brandTitle}><img src={rocketIcon} />Why Choose Invocad for Product Design?</p>
+                <p className={styles.brandTitle}><img src={rocketIcon} />Why Choose Invocad?</p>
                 <div className='row'>
                     <h3 className={`col-md-8 ${styles.subTitle}`}>Where Vision Meets Precision...</h3>
                     <p className={`col-md-4 ${styles.brandDesc}`}>
@@ -147,6 +176,13 @@ const Services = () => {
             {/* Step-by-Step Approach */}
             <div className='my-5 py-5'>
                 <h3 className={`${styles.subTitle}`}>Our Step-by-Step Approach</h3>
+                <p>
+                    End to end or just what you need. We adapt to your project.
+                </p>
+                <p>
+                    At Invocad, we offer a complete design to manufacturing workflow. But you do not need to take the full process.
+                    We are flexible. You can engage us for a specific phase only — whether it is concept design, 3D modeling, simulation, or just manufacturing support.
+                </p>
                 <div className='row'>
                     <div className='col-md-1 col-1'>
                         <div className={styles.verticalLine}></div>
@@ -158,7 +194,7 @@ const Services = () => {
                                     <h4 className={styles.stepTitle}>{step.title}</h4>
                                     <p className={styles.stepDesc}>{step.description}</p>
                                 </div>
-                                <img src={step.icon} className={styles.stepIcon} alt={step.title} />
+                                {/* <img src={step.icon} className={styles.stepIcon} alt={step.title} /> */}
                             </div>
                         ))}
                     </div>
@@ -167,7 +203,7 @@ const Services = () => {
 
             {/* Deliverables Section */}
             <div className='my-5 py-5'>
-                <h3 className={`${styles.subTitle}`}>Deliverables You Can Expect</h3>
+                <h3 className={`${styles.subTitle}`}>Our Services in...</h3>
 
                 <div className='row'>
                     {deliverablesData.map((item, index) => (
@@ -178,7 +214,7 @@ const Services = () => {
                                 ) : (
                                     <>
                                         <h4 className={styles.deliverableTitle}>{item.title}</h4>
-                                        <p className={styles.deliverableDesc}>{item.description}</p>
+                                        <p className={styles.deliverableDesc} dangerouslySetInnerHTML={{ __html: item.description }}></p>
                                     </>
                                 )}
                             </div>
@@ -187,7 +223,7 @@ const Services = () => {
                 </div>
             </div>
 
-            <ServiceSection/>
+            <ServiceSection />
         </div>
     );
 };

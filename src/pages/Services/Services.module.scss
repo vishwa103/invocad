@@ -3,7 +3,8 @@
 
     .subTitle {
         font-weight: 500;
-        font-size: 72px;
+        font-size: 52px;
+        margin-bottom: 40px;
     }
 
     .heroContainer {
@@ -114,6 +115,7 @@
     .stepContainer {
         background: var(--light-gray-color);
         padding: 30px;
+        border-radius: 12px;
         display: flex;
         justify-content: space-between;
         align-items:end ;
@@ -160,6 +162,7 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
+        min-height: 260px;
         margin-bottom: 20px;
 
         .deliverableTitle{

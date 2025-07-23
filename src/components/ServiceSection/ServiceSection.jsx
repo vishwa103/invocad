@@ -99,6 +99,15 @@ const services = [
       'It helps reduce material waste and optimize cutting processes.',
       'It is widely used in sheet metal, woodworking, and fabrication industries.',
     ]
+  },
+  {
+    title: 'Concept Design  ',
+    description: `Concept design is the foundation of innovation, where abstract ideas take visual form. It explores possibilities, defines directions, and sets the stage for the product's design journey. Through sketches, mood boards, and 3D concepts, it captures the essence of functionality, style, and purpose.`,    image: serviceImageTwo,
+    bullets: [
+      'Translate raw ideas into visual and functional directions.',
+      'Explore multiple possibilities before finalizing the approach.',
+      'Set the tone for engineering, aesthetics, and market alignment.',
+    ]
   }
 ];
 
@@ -127,9 +136,9 @@ const ServiceSection = () => {
                     <h3 className={styles.serviceContentTitle}>{selectedService.title}</h3>
                     <p className={styles.serviceContentDesc}>{selectedService.description}</p>
                   </div>
-                  <button className={styles.serviceButton}>
+                  {/* <button className={styles.serviceButton}>
                     Explore & Learn More <IoArrowForwardCircleOutline size={32} />
-                  </button>
+                  </button> */}
                 </div>
               </div>
 
