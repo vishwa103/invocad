@@ -251,9 +251,13 @@ const Home = () => {
 
         </div>
       </div>
-      <div className=' d-flex flex-column align-items-center justify-content-center'> 
+      <div className=' d-flex flex-column align-items-center justify-content-center'>
+        <Link to="/services" className="text-decoration-none"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           <button className={styles.herobutton}>Explore Our Services <FaArrowCircleRight className={styles.icon} size={40} /></button>
-</div>
+        </Link>
+      </div>
       <div className="row mt-5">
         <div className={styles.contactBanner}>
           <img src={bannerImage} alt="Contact Us Hero" width="100%" className={styles.contactBannerImage} />
