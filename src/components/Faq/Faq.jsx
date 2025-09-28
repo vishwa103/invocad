@@ -54,18 +54,22 @@ const faqData = [
 <br/>•	Per-hour CAD work
 <br/>•	Full-project fixed quotes
 <br/>•	Manufacturing-based costing
-<br/>We provide clear estimates after understanding your needs — no hidden fees.` },  {
-    question: 'Will you sign an NDA?',
-    answer: `Yes. We take your intellectual property seriously and are happy to sign a Non-Disclosure Agreement to protect your idea and data.` },  {
-    question: 'What software do you use?',
-    answer: `We use industry-standard tools, including:
-<br/>•	SolidWorks
-<br/>•	CATIA
-<br/>•	Creo
-<br/>•	AutoCAD
-<br/>•	Fusion 360
-<br/>•	Ansys (for CAE)
-<br/>We can also adapt based on client requirements or file formats.` },  {
+<br/>We provide clear estimates after understanding your needs — no hidden fees.` },
+//   {
+//     question: 'Will you sign an NDA?',
+//     answer: `Yes. We take your intellectual property seriously and are happy to sign a Non-Disclosure Agreement to protect your idea and data.` },  
+//     {
+//     question: 'What software do you use?',
+//     answer: `We use industry-standard tools, including:
+// <br/>•	SolidWorks
+// <br/>•	CATIA
+// <br/>•	Creo
+// <br/>•	AutoCAD
+// <br/>•	Fusion 360
+// <br/>•	Ansys (for CAE)
+// <br/>We can also adapt based on client requirements or file formats.` }, 
+
+{
     question: 'Do you provide support after design delivery?',
     answer: `Yes. Our support doesn’t end at delivery. We offer:
 <br/>•	Design modifications

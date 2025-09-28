@@ -8,14 +8,21 @@ const ContactUs = () => {
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
 
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // console.log("SERVICE ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+        // console.log("TEMPLATE ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+        // console.log("PUBLIC KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+        // console.log("FORM REF:", formRef.current);
         emailjs.sendForm(
-            'YOUR_SERVICE_ID',
-            'YOUR_TEMPLATE_ID',
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
             formRef.current,
-            'YOUR_PUBLIC_KEY'
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         ).then(
             (result) => {
                 setSuccessMsg('✅ Message sent successfully!');
@@ -25,10 +32,12 @@ const ContactUs = () => {
             (error) => {
                 setErrorMsg('❌ Failed to send message. Please try again later.');
                 setSuccessMsg('');
-                console.error(error.text);
+                console.error('EmailJS Error:', error?.text);
             }
         );
     };
+
+
 
     return (
         <div className={styles.contactUs}>
@@ -60,7 +69,7 @@ const ContactUs = () => {
                                 <div className='py-5'>
                                     <h3 className={styles.contactTitle}>Email</h3>
                                     <p className={styles.contactInfo}>
-                                        <a href="mailto:info@invocad.in" className={styles.contactLink}>info@invocad.in</a>
+                                        <a href="mailto:contactinvocad@gmail.com" className={styles.contactLink}>contactinvocad@gmail.com</a>
                                     </p>
                                 </div>
                             </div>
@@ -71,29 +80,60 @@ const ContactUs = () => {
                                 </div>
                             </div>
                         </div>
-
                         <form ref={formRef} onSubmit={handleSubmit} className={styles.contactForm}>
                             <h3 className={styles.contactFormTitle}>Book a Free Consultation</h3>
-                            <p className={styles.contactFormDesc}>// Reach out today and take the first step towards a unforgettable experience.</p>
+                            <p className={styles.contactFormDesc}>
+                                Reach out today and take the first step towards an unforgettable experience.
+                            </p>
 
                             <div className='row'>
                                 <div className='col-md-6'>
-                                    <input type="text" name="user_name" placeholder='Name' className={styles.inputField} required />
+                                    <input
+                                        type="text"
+                                        name="user_name"
+                                        placeholder="Name"
+                                        className={styles.inputField}
+                                        required
+                                    />
                                 </div>
                                 <div className='col-md-6'>
-                                    <input type="email" name="user_email" placeholder='Email' className={styles.inputField} required />
+                                    <input
+                                        type="email"
+                                        name="user_email"
+                                        placeholder="Email"
+                                        className={styles.inputField}
+                                        required
+                                    />
                                 </div>
                                 <div className='col-md-6'>
-                                    <input type="text" name="user_phone" placeholder='Phone Number' className={styles.inputField} />
+                                    <input
+                                        type="text"
+                                        name="user_phone"
+                                        placeholder="Phone Number"
+                                        className={styles.inputField}
+                                    />
                                 </div>
                                 <div className='col-md-6'>
-                                    <input type="text" name="company" placeholder='Company Name' className={styles.inputField} />
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        placeholder="Company Name"
+                                        className={styles.inputField}
+                                    />
                                 </div>
                                 <div className='col-md-12'>
-                                    <textarea name="message" placeholder='How can we help you?' className={styles.inputField} rows="4" required></textarea>
+                                    <textarea
+                                        name="message"
+                                        placeholder="How can we help you?"
+                                        className={styles.inputField}
+                                        rows="4"
+                                        required
+                                    ></textarea>
                                 </div>
                                 <div className='col-md-12'>
-                                    <button type="submit" className={styles.submitButton}>Send Message</button>
+                                    <button type="submit" className={styles.submitButton}>
+                                        Send Message
+                                    </button>
                                 </div>
                                 <div className='col-md-12 mt-3'>
                                     {successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
@@ -101,6 +141,7 @@ const ContactUs = () => {
                                 </div>
                             </div>
                         </form>
+
 
                     </div>
                 </div>

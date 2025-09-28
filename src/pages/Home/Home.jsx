@@ -59,7 +59,8 @@ const Home = () => {
           We are a design-led firm specializing in Product Design, Manufacturing Design, Reverse Engineering, AutoCAD Nesting, 2D to 3D Migration, CAM, Simulation, Concept Design, and Research & Development (R&D).
         </p>
         <p className={styles.aboutDesc}>
-          Our team is proficient in leading industry tools like SolidWorks, CATIA, Creo, and AutoCAD, enabling us to deliver engineering solutions that are both innovative and manufacturing-ready.
+          Our team is proficient in advanced industry tools, enabling us to deliver innovative and manufacturing-ready engineering solutions.
+          {/* Our team is proficient in leading industry tools like SolidWorks, CATIA, Creo, and AutoCAD, enabling us to deliver engineering solutions that are both innovative and manufacturing-ready. */}
         </p>
         <p className={styles.aboutDesc}>
           We follow a step-by-step structured approach, from initial idea to final prototype, ensuring clarity, accuracy, and performance at every stage.
