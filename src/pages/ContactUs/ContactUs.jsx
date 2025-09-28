@@ -7,17 +7,12 @@ const ContactUs = () => {
     const formRef = useRef();
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-
-
-
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
 
-        // console.log("SERVICE ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
-        // console.log("TEMPLATE ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-        // console.log("PUBLIC KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-        // console.log("FORM REF:", formRef.current);
         emailjs.sendForm(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -28,15 +23,16 @@ const ContactUs = () => {
                 setSuccessMsg('✅ Message sent successfully!');
                 setErrorMsg('');
                 formRef.current.reset();
+                setLoading(false);
             },
             (error) => {
                 setErrorMsg('❌ Failed to send message. Please try again later.');
                 setSuccessMsg('');
                 console.error('EmailJS Error:', error?.text);
+                setLoading(false);
             }
         );
     };
-
 
 
     return (
@@ -131,9 +127,14 @@ const ContactUs = () => {
                                     ></textarea>
                                 </div>
                                 <div className='col-md-12'>
-                                    <button type="submit" className={styles.submitButton}>
-                                        Send Message
+                                    <button
+                                        type="submit"
+                                        className={styles.submitButton}
+                                        disabled={loading}
+                                    >
+                                        {loading ? 'Sending...' : 'Send Message'}
                                     </button>
+
                                 </div>
                                 <div className='col-md-12 mt-3'>
                                     {successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
