@@ -2,21 +2,44 @@ import React, { useRef, useState } from 'react';
 import styles from './ContactUs.module.scss';
 import HeroImage from '../../assets/ContactImage.png';
 import emailjs from '@emailjs/browser';
+import Select from "react-select";
+
+const serviceOptions = [
+  { value: "Product Design", label: "Product Design" },
+  { value: "Manufacturing design", label: "Manufacturing design" },
+  { value: "Drafting", label: "Drafting" },
+  { value: "Reverse Engineering", label: "Reverse Engineering" },
+  { value: "2d Migration", label: "2d Migration" },
+  { value: "Mechanism", label: "Mechanism" },
+  { value: "Simulation", label: "Simulation" },
+  { value: "Rendering", label: "Rendering" },
+  { value: "Auto cad nesting", label: "Auto cad nesting" },
+  { value: "Concept Design", label: "Concept Design" }
+];
+
 
 const ContactUs = () => {
     const formRef = useRef();
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
+    const [selectedServices, setSelectedServices] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
 
-        emailjs.sendForm(
+        const selectedValues = selectedServices.map(s => s.value).join(", ");
+
+
+        // ✅ Create a FormData object manually
+        const formData = new FormData(formRef.current);
+        formData.append("services_list", selectedValues); // New key for EmailJS
+
+        emailjs.send(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-            formRef.current,
+            Object.fromEntries(formData),
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         ).then(
             (result) => {
@@ -33,6 +56,7 @@ const ContactUs = () => {
             }
         );
     };
+
 
 
     return (
@@ -72,7 +96,7 @@ const ContactUs = () => {
                             <div className='col-md-4'>
                                 <div className='py-5'>
                                     <h3 className={styles.contactTitle}>Mobile</h3>
-                                    <p className={styles.contactInfo}>+91 6369727885</p>
+                                    <p className={styles.contactInfo}>+91 7812883741</p>
                                 </div>
                             </div>
                         </div>
@@ -117,6 +141,41 @@ const ContactUs = () => {
                                         className={styles.inputField}
                                     />
                                 </div>
+                                <div className="col-md-12">
+                                    <Select
+                                        isMulti
+                                        name="services"
+                                        options={serviceOptions}
+                                        value={selectedServices}
+                                        onChange={(selected) => setSelectedServices(selected)}
+                                        placeholder="Select Services"
+                                        classNamePrefix="select"
+                                        className={styles.inputField}
+
+                                        styles={{
+                                            control: (base) => ({
+                                                ...base,
+                                                border: "none",       // Remove border
+                                                boxShadow: "none",    // Remove blue focus outline
+                                                background: "transparent", // Optional - matches your input style
+                                            }),
+                                            multiValue: (base) => ({
+                                                ...base,
+                                                background: "#eee",   // Optional: tag style
+                                            }),
+                                            multiValueLabel: (base) => ({
+                                                ...base,
+                                                color: "#333",
+                                            }),
+                                            multiValueRemove: (base) => ({
+                                                ...base,
+                                                ':hover': { backgroundColor: "red", color: "white" }
+                                            })
+                                        }}
+                                    />
+
+                                </div>
+
                                 <div className='col-md-12'>
                                     <textarea
                                         name="message"
