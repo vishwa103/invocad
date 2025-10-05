@@ -4,9 +4,16 @@ import styles from './ServiceSection.module.scss'
 import lightingIcon from '../../assets/lightingIcon.png'
 import serviceImageOne from '../../assets/serviceImageOne.png'
 import serviceImageTwo from '../../assets/serviceImageTwo.png'
-import serviceImageThree from '../../assets/serviceImageThree.png'
-import serviceImageFour from '../../assets/serviceImageFour.png'
-import serviceImageFive from '../../assets/serviceImageFive.png'
+// import serviceImageThree from '../../assets/serviceImageThree.png'
+// import serviceImageFour from '../../assets/serviceImageFour.png'
+// import serviceImageFive from '../../assets/serviceImageFive.png'
+import draftingImg from '../../assets/services/draftingImage.jpg'
+import twodMigrationImg from '../../assets/services/2dMigration.png'
+import autoCADNesting from '../../assets/services/autoCADNesting.jpg'
+import rendering from '../../assets/services/rendering.png'
+import reverseEngineering from '../../assets/services/reverseEngineering.png'
+import simulation from '../../assets/services/simulation.png'
+
 import { useState } from 'react'
 
 const services = [
@@ -33,7 +40,7 @@ const services = [
   {
     title: 'Drafting',
     description: 'CAD 2D Drawing delivers precise, detailed technical layouts essential for engineering, architecture, and manufacturing.It simplifies complex designs into accurate plans, sections, and elevations. Ideal for documentation, fabrication, and seamless project coordination.',
-    image: serviceImageThree,
+    image: draftingImg,
     bullets: [
       'Drafting is the process of creating detailed technical drawings.',
       'It helps communicate design ideas clearly and accurately.',
@@ -43,7 +50,7 @@ const services = [
   {
     title: 'Reverse Engineering',
     description: 'CAD Reverse Engineering transforms physical objects into precise digital models through advanced scanning and reconstruction.It enables redesign, analysis, or reproduction of legacy parts without original drawings.Ideal for product improvement, restoration, and innovation based on existing designs',
-    image: serviceImageFour,
+    image: reverseEngineering,
     bullets: [
       'Reverse engineering is the process of analyzing existing products.',
       'It helps to understand the design, materials, and functionality.',
@@ -53,7 +60,7 @@ const services = [
   {
     title: '2d Migration',
     description: 'Migrating your legacy 2D CAD files to modern platforms can significantly improve your design accuracy, efficiency, and compatibility.',
-    image: serviceImageFive,
+    image: twodMigrationImg,
     bullets: [
       '2D migration involves converting old manual drawings into digital formats.',
       'It helps improve accuracy and easy modifications in CAD software.',
@@ -73,7 +80,7 @@ const services = [
   {
     title: 'Simulation',
     description: 'CAD Simulation brings virtual prototypes to life by testing real-world performance within a digital environment.It analyzes stress, motion, heat, and fluid flow to optimize designs before production.Essential for reducing costs, improving reliability, and accelerating innovation.',
-    image: serviceImageTwo,
+    image: simulation,
     bullets: [
       'Simulation is used to replicate real-world conditions in a virtual environment.',
       'It helps to predict product performance and behavior.',
@@ -83,7 +90,7 @@ const services = [
   {
     title: 'Rendering',
     description: 'CAD Rendering converts technical 3D models into lifelike visuals with realistic lighting, textures, and materials.It helps visualize products and spaces before production or construction begins.Perfect for presentations, marketing, and client approvals with a photorealistic edge.',
-    image: serviceImageTwo,
+    image: rendering,
     bullets: [
       'Rendering is the process of creating realistic images from 3D models.',
       'It helps visualize the appearance of products before manufacturing.',
@@ -93,7 +100,7 @@ const services = [
   {
     title: 'Auto cad nesting',
     description: 'We specialize in high-precision laser cutting paired with advanced sheet metal nesting solutions to maximize material efficiency and reduce production costs.',
-    image: serviceImageTwo,
+    image: autoCADNesting,
     bullets: [
       'AutoCAD nesting is used to arrange multiple parts efficiently on a sheet.',
       'It helps reduce material waste and optimize cutting processes.',

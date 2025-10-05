@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Footer.module.scss'
 import logo from '../../assets/logo/invoCAD LOGO.png'
 import footerTitle from '../../assets/INVOCAD.png'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const productDesignLinks = [
     { name: 'Product Design', path: '/' },
@@ -14,15 +14,15 @@ const productDesignLinks = [
 
 const mainMenuLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/' },
+    { name: 'About Us', path: '/#about' },
     { name: 'Services', path: '/services' },
     { name: 'Contact Us', path: '/contact' },
 ];
 
 const otherLinks = [
     { name: 'Blog', path: '/' },
-    { name: 'FAQs', path: '/' },
-    { name: 'Partner with Us', path: '/' },
+    { name: 'FAQs', path: '/#faq' },
+    { name: 'Partner with Us', path: '/contact' },
 ];
 
 
@@ -51,21 +51,44 @@ const Footer = () => {
 
                         <div className="col-lg-6 col-md-6">
                             <div className={styles.footerLinks}>
-                                {mainMenuLinks.map((link, index) => (
-                                    <Link key={index} to={link.path} className={styles.footerLink}>
-                                        {link.name}
-                                    </Link>
-                                ))}
+                                {mainMenuLinks.map((link, index) => {
+                                    const isHashLink = link.path.includes('#');
+
+                                    return (
+                                        <NavLink
+                                            key={index} to={link.path}
+                                            onClick={() => {
+                                                // Scroll to top only if it's not a hash link
+                                                if (!isHashLink) {
+                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }
+                                            }}
+                                            className={styles.footerLink}>
+                                            {link.name}
+                                        </NavLink>
+                                    )
+                                })}
                             </div>
                         </div>
 
                         <div className="col-lg-4 col-md-6">
                             <div className={styles.footerLinks}>
-                                {otherLinks.map((link, index) => (
-                                    <Link key={index} to={link.path} className={styles.footerLink}>
-                                        {link.name}
-                                    </Link>
-                                ))}
+                                {otherLinks.map((link, index) => {
+                                    const isHashLink = link.path.includes('#');
+
+                                    return (
+                                        <NavLink key={index} to={link.path}
+                                            onClick={() => {
+                                                // Scroll to top only if it's not a hash link
+                                                if (!isHashLink) {
+                                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                                }
+                                            }}
+                                            className={styles.footerLink}>
+                                            {link.name}
+                                        </NavLink>
+                                    )
+                                })}
                             </div>
                         </div>
                     </div>

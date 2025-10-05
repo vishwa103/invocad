@@ -93,7 +93,7 @@ const Faq = () => {
   };
 
   return (
-    <div className={styles.faqContainer}>
+    <section id="faq" className={styles.faqContainer}>
       <h2 className={styles.title}>Frequently Asked Questions</h2>
       <div className={styles.faqList}>
         {faqData.map((item, index) => (
@@ -112,7 +112,7 @@ const Faq = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

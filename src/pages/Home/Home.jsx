@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Home.module.scss'
-import heroImage from '../../assets/hero 1.png'
+import heroImage from '../../assets/heroImage.png'
 import { FaArrowCircleRight } from 'react-icons/fa'
 import starsIcon from '../../assets/starsIcon.png'
 import rocketIcon from '../../assets/rocketIcon.png'

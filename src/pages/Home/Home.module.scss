@@ -29,15 +29,15 @@
 
     .imageContainer>* {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
     }
 
     .heroImage {
-        height: 85vh;
-        width: auto;
+        height: 100vh;
+        width: 100%;
     }
 
     .imageTextOne {
@@ -197,8 +197,8 @@
         }
 
         .heroImage {
-            height: 50vh;
-            width: auto;
+            height: 60vh;
+            width: 100%;
         }
 
         .imageTextOne {

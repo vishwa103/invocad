@@ -64,6 +64,7 @@ const Header = () => {
                                         if (!isHashLink) {
                                             window.scrollTo({ top: 0, behavior: 'smooth' });
                                         }
+                                        setIsMenuOpen(false);
                                     }}
                                     className={() =>
                                         `${styles.navItem} ${isActiveLink() ? styles.active : ''}`
@@ -78,12 +79,17 @@ const Header = () => {
                 </nav>
 
                 <div className="d-flex gap-2 align-items-center">
-                    <Link to="/contact" className="text-decoration-none">
+                    <NavLink
+                        to="/contact"
+                        onClick={() => {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="text-decoration-none">
                         <button className={styles.contactButton} title="Contact our team">
                             <IoIosCall className={styles.icon} />
                             Contact Us
                         </button>
-                    </Link>
+                    </NavLink>
                     <div className={styles.menuIcon} onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         {isMenuOpen ? <FiX size={32} /> : <HiMenuAlt3 size={32} />}
                     </div>
