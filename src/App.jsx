@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/Footer';
 import Services from './pages/Services/Services';
 import ContactUs from './pages/ContactUs/ContactUs';
+import Portfolio from './pages/Portfolio/Portfolio';
+import ProductPage from './pages/Portfolio/ProductPage/ProductPage';
 function App() {
 
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/services' element={<Services />} />
         <Route path='/contact' element={<ContactUs />} />
+        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/portfolio/:id' element={<ProductPage />} />
       </Routes>
       </div>
       <Footer/>

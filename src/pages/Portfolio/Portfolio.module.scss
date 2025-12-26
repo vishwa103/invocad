@@ -1,0 +1,104 @@
+.portfolio{
+    padding: 10px;
+
+    .heroContainer {
+        min-height: 100vh;
+        border-radius: 24px;
+        padding: 75px 20px 20px 20px;
+        background: var(--light-gray-color);
+
+
+        .ServiceTitle {
+            font-weight: 500;
+            font-size: 102px;
+
+            @media screen and (max-width: 1200px) {
+                font-size: 72px;
+
+            }
+
+            @media (max-width: 768px) {
+                font-size: 48px;
+
+            }
+        }
+
+        .herobutton {
+            padding: 6px 8px 6px 20px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            border-radius: 40px;
+            background: var(--white-color);
+            border: none;
+            font-weight: 400;
+            font-size: 20px;
+
+            .icon {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .portfolioTitle{
+        font-size: 20px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .portfolioSubtitle{
+        font-weight: 500;
+        font-size: 72px;
+        margin-bottom: 20px;
+    }
+
+    .portfolioDescription{
+        font-size: 20px;
+    }
+
+    .productCard{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 20px;
+
+        .productImage{
+            width: 100%;
+            height: auto;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .productTitle{
+            font-size: 28px;
+            color: #000000;
+            font-weight: 600;
+            margin: 10px;
+        }
+
+        .icon{
+            color: #000000;
+            transition:  color 0.3s ease;
+        }
+
+
+        &:hover{
+            .icon{
+                color: var(--primary-color);
+            }
+        }
+        // .productDescription{
+        //     font-size: 16px;
+        //     margin: 0 10px 10px 10px;
+        // }
+    }
+
+    @media screen and (max-width: 768px) {
+        .portfolioSubtitle {
+            font-size: 48px;    
+        }
+    }
+}

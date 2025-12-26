@@ -10,6 +10,7 @@ const pageLinks = [
     { link: '/', name: 'Home' },
     { link: '/#about', name: 'About Us' },
     { link: '/services', name: 'Services' },
+    { link: '/portfolio', name: 'Portfolio' },
 ];
 
 const Header = () => {
